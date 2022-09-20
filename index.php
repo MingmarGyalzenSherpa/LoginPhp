@@ -1,3 +1,8 @@
+<?php
+    include('./db_config.php');
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +39,7 @@
         <div class="container p-5 ">
             <h2 class="mb-3">LOGIN</h2>
             <hr>
-            <form action="">
+            <form action="./login_auth.php" method="POST">
                 <div class="mb-3">
                     <label for="usrname" class="form-label">Username</label>
                     <input type="text" name="username" id="usrname" class="form-control">

@@ -1,3 +1,17 @@
+<?php
+
+    //starting a session
+    session_start();
+
+    //checking if a isLoggedIn session element is set
+   $session = isset($_SESSION['isLoggedIn']);
+   if(!$session)
+   {
+        header('location:./index.php');
+   }
+   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,5 +30,16 @@
         <a class="nav-link" href="#">Request</a>
         <a class="nav-link" href="#">Tasks</a>
     </nav>
+
+    <?php echo "<h1> Hi ". $_SESSION['name']."</h1>" ?>
+    
+    <div class="btn-wrap mt-5 p-5">
+        <form action="./logout.php" method="POST">
+            <button type="submit" class="btn btn-danger">LOGOUT</button>
+        </form>
+    </div>
 </body>
 </html>
+
+<?php 
+?>
